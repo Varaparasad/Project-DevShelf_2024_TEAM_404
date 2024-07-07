@@ -1,0 +1,223 @@
+* {
+margin: 0;
+padding: 0;
+}
+
+.main {
+width: 100vw;
+height: 100vh;
+background-image: url("login_img.png");
+background-repeat: no-repeat;
+background-position: center center;
+background-size: cover;
+position: relative;
+}
+
+.logo img {
+width: 120px;
+margin: 10px 15px;
+}
+
+.com img {
+/* width: 200px;
+height: 300px;            */
+position: absolute;
+top: 133px;
+left: 175px;
+width: 440px;
+height: 440px;
+}
+
+.loginbox {
+width: 410px;
+min-height: 440px;
+background-color: white;
+position: absolute;
+top: 130px;
+right: 230px;
+box-shadow: -1px -8px 20px #716f6f;;
+border-radius: 23px;
+/* background-image: url("https://mapleblinds.com.au/wp-content/uploads/2022/07/loader-leaf.gif"); */
+}
+
+.l1 {
+text-align: center;
+margin-top: 30px;
+font-size: 2rem;
+color: rgb(247, 185, 1);
+font-weight: 600;
+font-family: 'Arial', sans-serif;
+}
+
+.inputs {
+display: flex;
+flex-direction: column;
+gap: 18px;
+margin-top: 35px;
+}
+
+input {
+width: max(230px, 20vw);
+margin: auto;
+padding: 20px 17px;
+border-radius: 18px;
+background-color: #d9d9d93c;
+border: 2px solid #b0adad;
+}
+input:hover{
+border: 2px solid #f3bf15;
+box-shadow: -1px -2px 12px #f3bf15;
+}
+
+.continue {
+text-align: center;
+margin-top: 34px;
+padding-bottom: 20px;
+}
+
+.continue button {
+padding: 16px 63px;
+cursor: pointer;
+background: #f3bf15;
+border: 2px solid #FFC107;
+border-radius: 23px;
+font-size: large;
+color: white;
+font-weight: 700;
+}
+.continue button:hover{
+border: 2px solid #FFC107;
+box-shadow: 3px 4px 20px 3px #f3bf15
+}
+
+.img img {
+width: 410px;
+height: 32px;
+position: absolute;
+bottom: -1px;
+right: 0px;
+}
+
+.flex {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: inherit;
+}
+
+
+
+@media only screen and (max-width:1300px) {
+.com img{
+left: 85px;
+}    
+
+.loginbox{
+right: 343px;
+}
+}
+@media only screen and (max-width:1100px) {
+.com img{
+left: 71px;
+}    
+
+.loginbox{
+right: 86px;
+}
+}
+@media only screen and (max-width: 1000px) {
+.logo img {
+width: 101px;
+margin: 5px 7px;
+}
+
+.com img {
+width: 40vw;
+height: 41vw;
+left: 72px;
+}
+.l1{
+margin-top: 53px;
+}
+
+.loginbox {
+width: 40vw;
+min-height: 45vw;
+right: 26px;
+}
+
+.loginbox .inputs input {
+width: 28vw;
+}
+
+.continue button {
+padding: 10px 40px;
+}
+}
+
+@media only screen and (max-width:700px) {
+.com img {
+top: 26vw;
+left: 5vw;
+}
+
+.l1 {
+font-size: 1.5rem;
+margin-top: 20px;
+}
+.loginbox{
+top: 173px;
+}
+
+.loginbox .inputs input {
+padding: 10px 15px;
+}
+
+.continue button {
+padding: 10px 35px;
+}
+}
+@media only screen and (max-width:600px) {
+ .com img{
+    top: 200px;
+ }    
+
+ .loginbox{
+    min-height: 48vw;
+ }
+}
+@media only screen and (max-width:500px) {
+.com img{
+top: 409px;
+left: 56vw;
+}    
+
+.loginbox{
+top: 116px;
+right: 25vw;
+width: 239px;
+}
+.logo img{
+width: 83px;
+padding: 2px 3px;
+}
+.loginbox .input input{
+width: 184px;
+}
+}
+@media only screen and (max-width:400px){
+.loginbox{
+right: 18vw;
+width: 244px;
+top: 145px;
+}
+.com img{
+top: 462px;
+}
+
+.loginbox .inputs input{
+width: 45vw;
+}
+
+}
