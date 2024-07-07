@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        button {
+            padding: 20px 30px;
+            font-size: larger;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="main">
+            <%= bookdetails %>
+        </div>
+        <button class="button">buy now</button>
+        <button class="button2">Add to wishlist</button>
+    </div>
+    <script>
+        let d = (document.querySelector(".main").innerHTML.trim().replaceAll("\n", "").split(")")[1]);
+        let e = "{" + d.slice(3, d.length);
+        eval('var obj=' + e);
+        // console.log(e)
+        console.log(obj.count)
+
+        document.querySelector(".button").addEventListener("click",()=>{
+            if(obj.count==0){
+                alert("Curently unavailable")
+                window.location=window.location;
+            }
+            else{
+                alert("Booked sucessfully")
+                window.location="/mybooks"
+            }
+        })
+        document.querySelector(".button2").addEventListener("click",()=>{
+            
+            window.location="/mywishlists"
+            alert("Added to wishlist")
+        })
+        
+
+    </script>
+</body>
+
+</html>

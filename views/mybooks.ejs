@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        tbody tr {
+            cursor: pointer;
+        }
+
+        tr:hover {
+            background-color: rgb(108, 108, 106);
+        }
+
+        nav form {
+            display: flex;
+            gap: 10px;
+            margin: 0px 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1><b>My books</b></h1>
+    <!-- <div class="d-grid">
+        <button class="btn btn-primary" type="button">button</button>
+    </div> -->
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Sno.</th>
+                <th scope="col">title</th>
+                <th scope="col">Date</th>
+                <th scope="col">author</th>
+                <th scope="col">genre</th>
+                <th scope="col">department</th>
+                <th scope="col">returndate</th>
+                <!-- <th scope="col">Number</th>
+                <th scope="col">Number</th>
+                <th scope="col">Number</th>
+                <th scope="col">Number</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let index=1;index<=b.length ;index++) { %>
+
+                <tr class="r">
+                    <th scope="row">
+                        <%= index %>
+                    </th>
+                    <td class="title">
+                        <%= b[index-1].title %>
+                    </td>
+                    <td class="date">
+                        <%= b[index-1].date %>
+                    </td>
+                    <td>
+                        <%= b[index-1].author %>
+                    </td>
+                    <td>
+                        <%= b[index-1].genre %>
+                    </td>
+                    <td>
+                        <%= b[index-1].department %>
+                    </td>
+                    <td class="returndate">
+                        <%= b[index-1].returndate %>
+                    </td>
+                </tr>
+
+                <% } %>
+        </tbody>
+
+    </table>
+    <button class="home">Go to home</button>
+    <button class="search">GO to search</button>
+    <button class="logout">Log out</button>
+    <script>
+
+        function compareDates(dateString1, dateString2) {
+            // Create Date objects from the input date strings
+            let date1 = new Date(dateString1);
+            let date2 = new Date(dateString2);
+
+            // Compare the dates
+            if (date1 < date2) {
+                return -1;
+            } else if (date1 > date2) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+
+        document.querySelector(".home").addEventListener("click", () => {
+            window.location = `${window.location.origin}/landingpage`
+        })
+        document.querySelector(".search").addEventListener("click", () => {
+            window.location = `${window.location.origin}/next`
+        })
+        document.querySelector(".logout").addEventListener("click", () => {
+            window.location = `${window.location.origin}`
+        })
+
+        let a = document.querySelectorAll(".r")
+        Array.from(a).forEach(element => {
+            element.addEventListener("click", () => {
+                let newloc = element.querySelector("td").innerHTML.trim()
+                console.log(newloc)
+                window.location = `${window.location.origin}/mybook/${newloc}`
+            })
+        });
+        
+        let dates = Array.from(document.querySelectorAll(".returndate"));
+        let titles = Array.from(document.querySelectorAll(".title"));
+        let now = new Date()
+        let fnow = `${now}`.split("GMT")[0]
+
+        for (let i = 0; i < dates.length; i++) {
+            if (compareDates(dates[i].innerHTML.trim(),fnow)==-1) {
+                alert(`${titles[i].innerHTML.trim()} book should be retured`)
+                console.log(`${titles[i].innerHTML.trim()}`)
+                dates[i].style.backgroundColor="red"
+            }
+        }
+
+
+
+        // window.onbeforeunload = function (e) {
+        //     if (refreshMode === 1) {
+        //         return; // Allow refresh
+        //     } else {
+        //         e.preventDefault(); // Prevent refresh
+        //     }
+        // };
+
+    </script>
+</body>
+
+</html>
