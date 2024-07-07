@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        .flex {
+            display: flex;
+            /* flex-direction: column; */
+            gap: 50px;
+            margin-top: 30px;
+        }
+
+        button {
+            width: 500px;
+            margin: auto;
+            padding: 20px 30px;
+            background-color: aqua;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1><b>click here for next page</b></h1>
+    <div class="flex">
+        <button class="search">Show all books</button>
+        <button class="mybooks">Show mybooks list</button>
+        <button class="mywish">Show mywish list</button>
+    </div>
+
+
+    <script>
+        document.querySelector(".search").addEventListener("click", async () => {
+            // console.log("Yes")
+            window.location = "/next"
+            // let a = await fetch("/next")
+            // let b = await a.text()
+            // console.log(b)
+        })
+        
+        document.querySelector(".mybooks").addEventListener("click",()=>{
+            window.location="/mybook"})
+
+        document.querySelector(".mywish").addEventListener("click",()=>{
+            window.location="/mywishlist"})
+            
+    </script>
+</body>
+
+</html>
