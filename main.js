@@ -17,7 +17,20 @@ let f
 var uname
 var userid
 
-// app.use('/homepage',homepage)
+function compareDates(dateString1, dateString2) {
+            // Create Date objects from the input date strings
+            let date1 = new Date(dateString1);
+            let date2 = new Date(dateString2);
+
+            // Compare the dates
+            if (date1 < date2) {
+                return -1;
+            } else if (date1 > date2) {
+                return 1;
+            } else {
+                return 0;
+            }
+}
 
 
 app.use(bodyparser.json())
@@ -132,8 +145,22 @@ app.get('/next', async (req, res) => {
 
 })
 //Starting/Landing page
-app.get('/landingpage', (req, res) => {
+app.get('/landingpage', async (req, res) => {
     res.render("table", { butto: "but" })
+// TO notify user if any book is to be returned
+    let f2 = await userdetails.find({ name: uname })
+    let nowdate = new Date();
+    let nowdate1 = `${nowdate}`.split("GMT")[0]
+    for (let i = 0; i < f2[0].mybooks.length; i++) {
+
+        if (compareDates((nowdate1), (f2[0].mybooks[i].returndate)) == 1) {
+            notifier.notify({
+                title: ` ${f2[0].mybooks[i].title} must be returned`,
+                message: `Please return the ${f2[0].mybooks[i].title} book`
+            })
+        }
+    }
+    
     //Redirecting to buynowpage
     arr.forEach(element => {
         // console.log(`/${element.replaceAll(" ", "%20")}`)
