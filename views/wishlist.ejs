@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" type="x-icon" href="https://scif.iitdh.ac.in/wp-content/uploads/2021/02/LOGO.png">
+    <link rel="stylesheet" href="wishlist_style.css">
+</head>
+
+<body>
+    <div class="mainbox">
+        <nav>
+            <div class="logo">
+                <img src="images/logo-black-final-5@2x.png" alt="">
+            </div>
+            <div class="nav2">
+                <div class="links">
+                    <div class="home">Home</div>
+                    <div class="orders">Orders</div>
+                    <div class="wishlist">Wishlist</div>
+                </div>
+                <div class="buttons">
+                    <div class="search"> <img src="images/vector@2x.png" alt=""></div>
+                    <div class="account"> <img src="images/group-10@2x.png" alt=""></div>
+                </div>
+                <div class="hambuger">
+                    <img src="images/hambuger.svg" alt="">
+                </div>
+                <div class="close">
+                    <img src="images/close.svg" alt="">
+                </div>
+            </div>
+        </nav>
+        <h1><b>Mywish List </b></h1>
+        <div class="cards">
+            <p><%= noof %></p>
+            <% for(let index=1;index<=b.length ;index++) { %>
+                <div class="card">
+                    <div class="content">
+                    <div class="title width ellipse-2 three-lines"> <b><%= b[index-1].title %> </b></div>
+                    <div class="author width ellipse three-lines"><%= b[index-1].author %></div>
+                    <div class="genre width ellipse three-lines"><%= b[index-1].genre %></div>
+                    <div class="remove">Remove from wishlist</div>
+                    </div>
+                </div>
+                <% } %>
+        </div>
+        <script>
+        document.querySelector(".home").addEventListener("click", () => {
+            window.location = `${window.location.origin}/landingpage`
+        })
+        document.querySelector(".search").addEventListener("click", () => {
+            window.location = `${window.location.origin}/search`
+        })
+        document.querySelector(".orders").addEventListener("click", () => {
+            window.location = `${window.location.origin}/orders`
+        })
+        document.querySelector(".account").addEventListener("click", () => {
+            window.location = `${window.location.origin}/profile`
+        })
+
+            const nav1 = document.querySelector("nav")
+            const img = document.querySelector(".logo").querySelector("img")
+            const heading = document.querySelector("h1").querySelector("b")
+            window.addEventListener("scroll", () => {
+                if (window.scrollY >= 35) {
+                    nav1.classList.add('purple')
+                    heading.style.visibility = "hidden"
+                    img.src = "https://scif.iitdh.ac.in/wp-content/uploads/2021/02/LOGO.png"
+                    img.style.filter = "invert(1)"
+                    // img.style.height=
+                }
+                else if (window.scrollY < 35) {
+                    nav1.classList.remove('purple')
+                    heading.style.visibility = "visible"
+                    img.src = "images/logo-black-final-5@2x.png"
+                    img.style.filter = "invert(0)"
+                }
+            })
+
+            document.querySelector(".hambuger").querySelector("img").addEventListener("click", () => {
+                document.querySelector(".links").style.visibility = "visible"
+                document.querySelector(".close").querySelector("img").style.visibility = "visible"
+                document.querySelector(".buttons").style.visibility = "hidden"
+                document.querySelector(".links").style.backgroundColor = "#89288f"
+                document.querySelector(".links").style.right = 0 + "px"
+                document.querySelector(".hambuger").querySelector("img").style.visibility = "hidden"
+                document.querySelector("h1").querySelector("b").style.visibility = "hidden"
+            })
+
+            document.querySelector(".close").querySelector("img").addEventListener("click", () => {
+                document.querySelector(".links").style.right = -100 + "%"
+                document.querySelector(".close").querySelector("img").style.visibility = "hidden"
+                document.querySelector(".buttons").style.visibility = "visible"
+                document.querySelector(".hambuger").querySelector("img").style.visibility = "visible"
+                document.querySelector("h1").querySelector("b").style.visibility = "visible"
+
+            })
+            Array.from(document.querySelectorAll(".card")).forEach(element => {
+                element.addEventListener("click",()=>{
+                    if(confirm(`Do you want to remove ${element.querySelector("b").innerHTML.trim()} from wishlsit`)){
+                        console.log("yes")
+                        window.location=`${window.location.origin}/wishlist/${element.querySelector("b").innerHTML.trim()}`
+                    }
+                })
+            });
+        </script>
+</body>
+
+</html>
