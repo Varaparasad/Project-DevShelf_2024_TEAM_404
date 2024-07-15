@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User profile|IIT Dharwad</title>
+    <link rel="stylesheet" href="userprofile_style.css">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Bree+Serif&display=swap" rel="stylesheet">
+    <link rel="icon" type="x-icon" href="https://scif.iitdh.ac.in/wp-content/uploads/2021/02/LOGO.png">
+</head>
+
+<body>
+    <div class="navbar">
+
+        <nav class="home-parent">
+            <div class="logo">
+                <img class="logo-black-final-5-icon"
+                    src="https://www.iitdh.ac.in/sites/default/files/2024-01/logo_black_final.png" alt="">
+                <!-- <img class="logo-black-final-5-icon" alt="" src="./public/logo-black-final-5@2x.png" /> -->
+                <!-- <img class="logo-black-final-5-icon" alt=""
+                    src="https://scif.iitdh.ac.in/wp-content/uploads/2021/02/LOGO.png" /> -->
+            </div>
+            <div class="useraccess">
+                <ul>
+                    <li class="home"><a href="#">Home</a></li>
+                    <li class="home orders"><a href="#">Orders</a></li>
+                    <li class="home wishlist"><a href="#">Wishlist</a></li>
+                </ul>
+                <img class="vector-icon search" alt="" src="images/vector@2x.png" />
+
+                <!-- <img class="frame-child" alt="" src="images/group-10@2x.png" /> -->
+            </div>
+            <!-- <ul>
+                <li class="home"><a href="#">Home</a></li>
+                <li class="home"><a href="#">Orders</a></li>
+                <li class="home"><a href="#">Wishlist</a></li>
+            </ul>
+            <img class="vector-icon" alt="" src="./public/vector@2x.png" />
+
+            <img class="frame-child" alt="" src="./public/group-10@2x.png" /> -->
+        </nav>
+    </div>
+    <div class="profile">
+        <div class="greycontainer">
+            <div class="propic">
+                <%= udetails.name[0]%>
+            </div>
+            <div class="hidden back"><%= udetails.profilebackgroundcolour%></div>
+            <div class="hidden letter"><%= udetails.profileletter%></div>
+            <div class="completeprofile">Edit profile</div>
+        </div>
+        <div class="info">
+            <h1>
+                <%= udetails.name %>
+            </h1>
+        </div>
+        <div class="personalinfo">
+            <h1 id="heading">Personal info</h1>
+            <div class="infosection">
+                <div class="basic">
+                    <h2>Basic info</h2>
+                    <div class="namerow">
+                        <div class="name">Name</div>
+                        <div class="username">
+                            <%= udetails.name %>
+                        </div>
+                    </div>
+                    <div class="bdayrow">
+                        <div class="bday">Birthday</div>
+                        <div class="date">
+                            <%= udetails.dob %>
+                        </div>
+                    </div>
+                    <!-- <div class="genrow">
+                        <div class="gen">Gender</div>
+                        <div class="gender">Male/Female</div>
+                    </div> -->
+                </div>
+                <div class="contact">
+                    <h2>Contact info</h2>
+                    <div class="emailrow">
+                        <div class="email">Email</div>
+                        <div class="emailid">
+                            <%= udetails.email %>
+                        </div>
+                    </div>
+                    <div class="phonerow">
+                        <div class="tel">Phone</div>
+                        <div class="telno">
+                            <%= udetails.phonenumber %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="password">
+                <h2>Password</h2>
+                <div class="sugg">A secure password helps protect your Library Account
+                </div>
+                <div class="forbtn">
+                    <div class="key">••••••••</div>
+                    <div class="gobtn">
+                        <div class="gobtnin"></div>
+                    </div>
+                </div>
+                <div class="lastchanged">Last changed <%= udetails.lastdatepassword %>
+                </div>
+            </div>
+            <div class="knowmore">
+                <h2>Want to know more about us?</h2>
+                <div class="clickbtn">
+                    <button class="btn">Click here</button>
+                </div>
+            </div>
+        </div>
+        <div class="logoutsectionout">
+            <div class="logoutsection">
+                <div class="logoutimg">
+                    <img src="images/logout.png" alt="Error Loading Image">
+                </div>
+                <div class="logout">
+                    Logout
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelector(".btn").addEventListener("click", () => {
+            window.location = "https://www.iitdh.ac.in/"
+        })
+        document.querySelector(".logout").addEventListener("click", () => {
+            window.location = "/login"
+        })
+        document.querySelector(".home").addEventListener("click", () => {
+            window.location = `${window.location.origin}/landingpage`
+
+        })
+        document.querySelector(".orders").addEventListener("click", () => {
+            window.location = `${window.location.origin}/mybook`
+
+        })
+        document.querySelector(".search").addEventListener("click", () => {
+            window.location = `${window.location.origin}/search`
+
+        })
+        document.querySelector(".wishlist").addEventListener("click", () => {
+            window.location = `${window.location.origin}/wishlist`
+        })
+        document.querySelector(".completeprofile").addEventListener("click", () => {
+            window.location = `${window.location.origin}/editprofile`
+        })
+        document.querySelector(".gobtn").addEventListener("click", () => {
+            window.location = `${window.location.origin}/changepassword`
+        })
+
+        document.querySelector(".propic").style.backgroundColor = document.querySelector(".back").innerHTML.trim()
+        document.querySelector(".propic").style.color = document.querySelector(".letter").innerHTML.trim()
+    </script>
+</body>
+
+</html>
