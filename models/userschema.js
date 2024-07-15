@@ -30,10 +30,14 @@ const subsc2 = new mongooose.Schema({
 let sc=new mongooose.Schema({
     name:String,
     password:String,
+    lastdatepassword:String,
     email:String,
+    dob:String,
     phonenumber:Number,
     mybooks:[subsc1],
-    mywishlist:[subsc2]
+    mywishlist:[subsc2],
+    profilebackgroundcolour:String,
+    profileletter:String
 })
 
 module.exports= new mongooose.model('userdetails',sc)
