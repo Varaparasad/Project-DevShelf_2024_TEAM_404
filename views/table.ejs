@@ -2,56 +2,243 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        h1 {
-            text-align: center;
-        }
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
 
-        .flex {
-            display: flex;
-            /* flex-direction: column; */
-            gap: 50px;
-            margin-top: 30px;
-        }
-
-        button {
-            width: 500px;
-            margin: auto;
-            padding: 20px 30px;
-            background-color: aqua;
-            cursor: pointer;
-        }
-    </style>
+    <!-- <link rel="stylesheet" href="./newglobal.css" /> -->
+    <link rel="stylesheet" href="landingpage_style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600&display=swap" />
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Bree+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css">
+    <title>Library Management System|IIT Dharwad</title>
+    <link rel="stylesheet" href="swiper-bundle.min.css">
+    <link rel="icon" type="x-icon" href="https://scif.iitdh.ac.in/wp-content/uploads/2021/02/LOGO.png">
 </head>
 
 <body>
-    <h1><b>click here for next page</b></h1>
-    <div class="flex">
-        <button class="search">Show all books</button>
-        <button class="mybooks">Show mybooks list</button>
-        <button class="mywish">Show mywish list</button>
+    <div class="mainbox">
+        <nav>
+            <div class="logo">
+                <img src="images/logo-black-final-5@2x.png" alt="">
+            </div>
+            <div class="nav2">
+                <div class="links">
+                    <div class="home">Home</div>
+                    <div class="orders">Orders</div>
+                    <div class="wishlist">Wishlist</div>
+                </div>
+                <div class="buttons">
+                    <div class="search"> <img src="images/vector@2x.png" alt=""></div>
+                    <div class="account"> <img src="images/group-10@2x.png" alt=""></div>
+                </div>
+                <div class="hambuger">
+                    <img src="images/hambuger.svg" alt="">
+                </div>
+                <div class="close">
+                    <img src="images/close.svg" alt="">
+                </div>
+            </div>
+        </nav>
+        <div class="desktop-33">
+            <div class="component-2">
+                <div class="rectangle-parent" id="frameDiv">
+                    <!-- <div class="frame-item"></div> -->
+                    <% for(let index=1;index<=b.length ;index++) { %>
+                        <div class="frame-item box">
+                            <div class="content">
+                                <div class="title width ellipse-2 three-lines">
+                                    <b>
+                                        <%= b[index-1].title %>
+                                    </b>
+                                </div>
+                                <div class="author width ellipse three-lines">
+                                    <%= b[index-1].author %>
+                                </div>
+                                <div class="genre width ellipse three-lines">
+                                    <%= b[index-1].genre %>
+                                </div>
+                            </div>
+                        </div>
+                        <% } %>
+                </div>
+            </div>
+
+            <div class="freshers-container">
+                <div class="menu">
+                    <h1 class="for-freshers">Recommended books</h1>
+                    <!-- <div class="select-menu">
+                        <div class="select-btn">
+                            <span class="sBtn-text">Branch</span>
+                            <i class="bx bx-chevron-down"></i>
+                        </div>
+                        <ul class="options">
+                            <li class="option">
+                                <span class="option-text">Computer Science and Engineering</span>
+                            </li>
+                            <li class="option">
+                                <span class="option-text">Electrical Engineering</span>
+                            </li>
+                            <li class="option">
+                                <span class="option-text">Mechanical Engineering</span>
+                            </li>
+                            <li class="option">
+                                <span class="option-text">Civil Engineering</span>
+                            </li>
+                            <li class="option">
+                                <span class="option-text">Engineering physics</span>
+                            </li>
+                            <li class="option">
+                                <span class="option-text">Chemical Engineering</span>
+                            </li>
+                        </ul> -->
+                </div>
+            </div>
+            <div class="freshers">
+                <!-- <div class="freshers-item" id="box-1"></div> -->
+                <% for(let index=1;index<=b1.length ;index++) { %>
+                    <div class="freshers-item">
+                        <div class="content">
+                            <div class="title width ellipse-2 three-lines"> <b>
+                                    <%= b1[index-1].title %>
+                                </b></div>
+                            <div class="author width ellipse three-lines">
+                                <%= b1[index-1].author %>
+                            </div>
+                            <div class="genre width ellipse three-lines">
+                                <%= b1[index-1].genre %>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+            </div>
+        </div>
     </div>
 
-
     <script>
-        document.querySelector(".search").addEventListener("click", async () => {
-            // console.log("Yes")
-            window.location = "/next"
-            // let a = await fetch("/next")
-            // let b = await a.text()
-            // console.log(b)
-        })
-        
-        document.querySelector(".mybooks").addEventListener("click",()=>{
-            window.location="/mybook"})
+        var frameDiv = document.getElementById("frameDiv");
+        if (frameDiv) {
+            frameDiv.addEventListener("click", function () {
+                var anchor = document.querySelector(
+                    "[data-scroll-to='rectangleImage']",
+                );
+                if (anchor) {
+                    anchor.scrollIntoView({ block: "start", behavior: "smooth" });
+                }
+            });
+        }
 
-        document.querySelector(".mywish").addEventListener("click",()=>{
-            window.location="/mywishlist"})
-            
+        // const optionMenu = document.querySelector(".select-menu"),
+        //     selectBtn = optionMenu.querySelector(".select-btn"),
+        //     options = optionMenu.querySelectorAll(".option"),
+        //     sBtn_text = optionMenu.querySelector(".sBtn-text");
+
+        // selectBtn.addEventListener("click", () => optionMenu.classList.toggle("active"));
+
+        // options.forEach(option => {
+        //     option.addEventListener("click", () => {
+        //         let selectedOption = option.querySelector(".option-text").innerText;
+        //         sBtn_text.innerText = selectedOption;
+        //         optionMenu.classList.remove("active");
+        //         console.log(selectedOption)
+        //     })
+        // })
+        // var a = 1;
+
+        // Array.from(document.querySelectorAll(".option")).forEach(element => {
+        //     element.addEventListener("click", () => {
+        //         document.querySelector(".freshers").style.visibility = "visible"
+        //         a = 1
+        //         // console.log(a)
+        //     })
+
+        // });
+        // document.querySelector(".sBtn-text").addEventListener("click", () => {
+        //     if (a == 1) {
+        //         document.querySelector(".freshers").style.visibility = "hidden"
+        //         a = 0
+        //         // console.log(a)
+
+        //     }
+        //     else {
+        //         document.querySelector(".freshers").style.visibility = "visible"
+        //         a = 1
+        //     }
+        // })
+
+        // document.querySelector(".bx-chevron-down").addEventListener("click", () => {
+        //     if (a == 1) {
+        //         document.querySelector(".freshers").style.visibility = "hidden"
+        //         a = 0
+        //         // console.log(a)
+
+        //     }
+        //     else {
+        //         document.querySelector(".freshers").style.visibility = "visible"
+        //         a = 1
+        //         // console.log(a)
+
+        //     }
+        // })
+
+
+
+        document.querySelector(".hambuger").querySelector("img").addEventListener("click", () => {
+            document.querySelector(".links").style.visibility = "visible"
+            document.querySelector(".close").querySelector("img").style.visibility = "visible"
+            document.querySelector(".buttons").style.visibility = "hidden"
+            document.querySelector(".links").style.backgroundColor = "#89288f"
+            document.querySelector(".links").style.right = 0 + "px"
+            document.querySelector(".hambuger").querySelector("img").style.visibility = "hidden"
+            document.querySelector(".desktop-33").style.visibility = "hidden"
+        })
+
+        document.querySelector(".close").querySelector("img").addEventListener("click", () => {
+            document.querySelector(".links").style.right = -100 + "%"
+            document.querySelector(".close").querySelector("img").style.visibility = "hidden"
+            document.querySelector(".buttons").style.visibility = "visible"
+            document.querySelector(".hambuger").querySelector("img").style.visibility = "visible"
+            document.querySelector(".desktop-33").style.visibility = "visible"
+        })
+
+
+        let a2 = document.querySelectorAll(".freshers-item")
+        Array.from(a2).forEach(element => {
+            element.addEventListener("click", () => {
+                let newloc = element.querySelector(".title").querySelector("b").innerHTML.trim()
+                console.log(newloc)
+                window.location = `/${newloc}`
+            })
+        });
+        let a3 = document.querySelectorAll(".frame-item")
+        Array.from(a3).forEach(element => {
+            element.addEventListener("click", () => {
+                let newloc = element.querySelector(".title").querySelector("b").innerHTML.trim()
+                console.log(newloc)
+                window.location = `/${newloc}`
+            })
+        });
+        document.querySelector(".orders").addEventListener("click", () => {
+            window.location = `${window.location.origin}/orders`
+
+        })
+        document.querySelector(".search").addEventListener("click", () => {
+            window.location = `${window.location.origin}/search`
+
+        })
+        document.querySelector(".wishlist").addEventListener("click", () => {
+            window.location = `${window.location.origin}/wishlist`
+        })
+        document.querySelector(".account").addEventListener("click", () => {
+            window.location = `${window.location.origin}/profile`
+        })
+
+
+
+
     </script>
 </body>
 
 </html>
+
+<!-- >>>>>>> Incoming -->
