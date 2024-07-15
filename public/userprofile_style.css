@@ -1,0 +1,1210 @@
+html {
+    scroll-behavior: smooth;
+}
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+
+body {
+    background-image: url('images/bglib.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0px 0px;
+    padding: 0px 0px;
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.navbar {
+    position: sticky;
+    background-color: inherit;
+}
+
+.useraccess {
+    display: flex;
+    align-items: center;
+    gap: 0px;
+}
+
+.navbar ul {
+    margin: 18px;
+    display: flex;
+    /* font-family: 'Baloo Bhai', cursive; */
+}
+
+.navbar ul li {
+    list-style: none;
+}
+
+.navbar ul li a {
+    display: flex;
+    color: #fff;
+    text-decoration: none;
+    margin: 10px 10px;
+}
+
+/* filter: invert(100%); */
+/* object-fit: cover; */
+/* .logo-black-final-5-icon {
+    position: fixed;
+    top: 5px;
+    left: 10px;
+    width: 65px;
+    height: 80px;
+} */
+.logo-black-final-5-icon {
+    position: fixed;
+    top: 5px;
+    left: 18px;
+    width: 400px;
+    height: 90px;
+}
+
+.home {
+    margin-top: 2px;
+    font-size: 27px;
+    font-weight: bold;
+    /* font-family: 'Baloo Bhai', cursive; */
+    cursor: pointer;
+}
+
+.home:hover {
+    border-bottom: 2px solid #faa519;
+    margin: 0;
+}
+
+.vector-icon {
+    width: 28px;
+    position: relative;
+    height: 28px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.frame-child {
+    width: 45px;
+    position: relative;
+    height: 45px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.home-parent {
+    margin: 0;
+    position: fixed;
+    top: 0px;
+    right: 35px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.profile {
+    position: relative;
+    /* border: 2px solid red; */
+    border-radius: 25px 25px 0 0;
+    height: 85vh;
+    margin: 0px 20px;
+    top: 15vh;
+    background-color: white;
+    overflow-y: auto;
+}
+
+.greycontainer {
+    height: 190px;
+    top: 0;
+    border-radius: 25px 25px 10px 10px;
+    background-color: lightgrey;
+    /* border: 2px solid black; */
+}
+
+.propic {
+    position: relative;
+    height: 230px;
+    width: 230px;
+    border-radius: 50%;
+    border: 5px solid white;
+    top: 70px;
+    /* left: 100px;  */
+    margin: auto;
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 200px
+}
+.hidden{
+    visibility: hidden;
+}
+
+.info {
+    position: relative;
+    top: 90px;
+    text-align: center;
+}
+
+.info h1 {
+    font-size: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+}
+
+.personalinfo {
+    position: relative;
+    top: 90px;
+    /* border: 2px solid black; */
+    border: 2px solid transparent;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    margin: 15px 10px;
+    height: 420px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#heading {
+    margin: 30px 20px;
+    text-align: center;
+    width: 200px;
+    font-weight: 400;
+}
+
+.infosection {
+    display: flex;
+}
+
+.basic {
+    border: 2px solid lightgray;
+    margin: 10px 10px;
+    margin-top: 30px;
+    /* height: 35vh; */
+    height: 260px;
+    width: 49%;
+    border-radius: 10px;
+}
+
+.basic h2 {
+    margin: 30px 20px;
+    font-weight: 500;
+}
+
+.namerow {
+    display: flex;
+    gap: 60px;
+    margin: 20px 10px;
+    border-bottom: 1px solid lightgrey;
+}
+
+.name {
+    margin: 10px 10px;
+    width: 100px;
+}
+
+.username {
+    margin: 10px 10px;
+}
+
+.bdayrow {
+    display: flex;
+    gap: 60px;
+    margin: 20px 10px;
+    border-bottom: 1px solid lightgrey;
+}
+
+.bday {
+    margin: 10px 10px;
+    width: 100px;
+}
+
+.date {
+    margin: 10px 10px;
+}
+
+.genrow {
+    display: flex;
+    gap: 60px;
+    margin: 20px 10px;
+    border-bottom: 1px solid lightgrey;
+}
+
+.gen {
+    margin: 10px 10px;
+    width: 100px;
+}
+
+.gender {
+    margin: 10px 10px;
+}
+
+.contact {
+    border: 2px solid lightgray;
+    margin: 10px 10px;
+    margin-top: 30px;
+    /* height: 35vh; */
+    height: 260px;
+    width: 49%;
+    border-radius: 10px;
+}
+
+.contact h2 {
+    margin: 30px 20px;
+    font-weight: 500;
+}
+
+.emailrow {
+    display: flex;
+    gap: 60px;
+    margin: 20px 10px;
+    border-bottom: 1px solid lightgrey;
+}
+
+.email {
+    margin: 10px 10px;
+    width: 100px;
+}
+
+.emailid {
+    margin: 10px 10px;
+}
+
+.phonerow {
+    display: flex;
+    gap: 60px;
+    margin: 20px 10px;
+    border-bottom: 1px solid lightgrey;
+}
+
+.tel {
+    margin: 10px 10px;
+    width: 100px;
+}
+
+.telno {
+    margin: 10px 10px;
+}
+
+.password {
+    position: relative;
+    border: 2px solid lightgray;
+    top: 90px;
+    height: 150px;
+    width: 49%;
+    margin-top: 30px;
+    border-radius: 20px;
+    margin: 10px 10px;
+    padding: 0px 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.section {
+    display: flex;
+    margin: 10px 10px;
+}
+
+.password h2 {
+    margin: 10px 20px;
+    font-weight: 600;
+}
+
+.sugg {
+    margin: 0px 20px;
+    color: gray;
+}
+
+.forbtn {
+    display: flex;
+    gap: 300px;
+}
+
+.key {
+    margin: 10px 20px;
+    font-size: 25px;
+}
+
+.gobtn {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.gobtnin {
+    position: relative;
+    top: 10px;
+    right: 3px;
+    height: 12px;
+    width: 12px;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    transform: rotate(45deg);
+}
+
+.gobtn:hover {
+    border-color: #89288f;
+    background-color: #89288f;
+
+    .gobtnin {
+        border-color: white;
+    }
+}
+
+.gobtn:active {
+    border-color: #89288f;
+    background-color: #8a288f69;
+
+    .gobtnin {
+        border-color: white;
+    }
+}
+
+.lastchanged {
+    margin: 10px 20px;
+}
+
+.knowmore {
+    position: relative;
+    border: 2px solid lightgray;
+    top: 90px;
+    height: 150px;
+    width: 49%;
+    margin-top: 30px;
+    border-radius: 20px;
+    margin: 10px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.knowmore h2 {
+    margin: 10px 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.clickbtn {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0px;
+}
+
+.btn {
+    font-size: 30px;
+    border-radius: 20px;
+    padding: 5px 20px;
+    border: 3px solid #89288f;
+    background-color: #89288f;
+    color: white;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.btn:hover {
+    border: 3px solid #89288f;
+    background-color: #8a288f23;
+    color: #89288f;
+}
+
+.btn:active {
+    border: 3px solid #8a288f98;
+    background-color: #8a288f1d;
+    box-shadow: 0px 0px 10px 3px lightgray;
+}
+
+.logoutsectionout {
+    margin: 20px 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: 80px;
+}
+
+.logoutsection {
+    margin: 20px 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    border: 2px solid black;
+    border-radius: 20px;
+    width: 170px;
+    padding: 10px 10px;
+    transition: all 0.3s ease;
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+
+.logoutimg img {
+    height: 45px;
+    width: 32px;
+}
+
+.logout {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+}
+
+.logoutsection:hover {
+    background-color: #8a288f19;
+    border-color: #89288f;
+}
+
+.logoutsection:active {
+    box-shadow: 0px 0px 10px 5px lightgray;
+    background-color: #8a288f21;
+}
+
+@media (min-width:300px) and (max-width:1130px) {
+    .personalinfo {
+        height: 720px;
+    }
+
+    .infosection {
+        flex-wrap: wrap;
+    }
+
+    .basic {
+        width: 99%;
+    }
+
+    .contact {
+        width: 99%;
+    }
+
+    .section {
+        flex-wrap: wrap;
+    }
+
+    .password {
+        width: 99%;
+    }
+
+    .knowmore {
+        width: 99%;
+    }
+}
+
+@media (min-width:450px) and (max-width:625px) {
+    .profile {
+        margin: 0px 10px;
+    }
+
+    .personalinfo {
+        height: 560px;
+    }
+
+    .infosection {
+        flex-wrap: wrap;
+    }
+
+    .basic {
+        border: 2px solid lightgray;
+        margin: 10px 10px;
+        margin-top: 20px;
+        /* height: 35vh; */
+        height: 190px;
+        width: 99%;
+        border-radius: 10px;
+    }
+
+    .basic h2 {
+        margin: 20px 10px;
+        font-weight: 500;
+        font-size: 19px;
+    }
+
+    .namerow {
+        display: flex;
+        gap: 10px;
+        margin: 5px 10px;
+        border-bottom: 1px solid lightgrey;
+    }
+
+    .name {
+        margin: 5px 10px;
+        width: 60px;
+    }
+
+    .username {
+        margin: 5px 10px;
+        font-size: 13px;
+    }
+
+    .bdayrow {
+        display: flex;
+        gap: 10px;
+        margin: 15px 10px;
+        border-bottom: 1px solid lightgrey;
+    }
+
+    .bday {
+        margin: 5px 10px;
+        width: 60px;
+    }
+
+    .date {
+        margin: 5px 10px;
+        font-size: 13px;
+    }
+
+    .genrow {
+        display: flex;
+        gap: 10px;
+        margin: 15px 10px;
+        border-bottom: 1px solid lightgrey;
+    }
+
+    .gen {
+        margin: 5px 10px;
+        width: 60px;
+    }
+
+    .gender {
+        margin: 5px 10px;
+        font-size: 13px;
+    }
+
+    .contact {
+        border: 2px solid lightgray;
+        margin: 10px 10px;
+        margin-top: 20px;
+        /* height: 35vh; */
+        height: 190px;
+        width: 99%;
+        border-radius: 10px;
+    }
+
+    .contact h2 {
+        margin: 20px 10px;
+        font-weight: 500;
+        font-size: 19px;
+    }
+
+    .emailrow {
+        display: flex;
+        gap: 10px;
+        margin: 15px 10px;
+        border-bottom: 1px solid lightgrey;
+    }
+
+    .email {
+        margin: 5px 10px;
+        width: 60px;
+    }
+
+    .emailid {
+        margin: 5px 10px;
+        font-size: 13px;
+    }
+
+    .phonerow {
+        display: flex;
+        gap: 10px;
+        margin: 15px 10px;
+        border-bottom: 1px solid lightgrey;
+    }
+
+    .tel {
+        margin: 5px 10px;
+        width: 60px;
+    }
+
+    .telno {
+        margin: 5px 10px;
+        font-size: 13px;
+    }
+
+    .section {
+        flex-wrap: wrap;
+    }
+
+    .password {
+        width: 99%;
+        padding: 0px 5px;
+    }
+
+    .password h2 {
+        margin: 10px 10px;
+        font-weight: 500;
+        font-size: 20px;
+    }
+
+    .sugg {
+        font-size: 14px;
+    }
+
+    .forbtn {
+        gap: 200px;
+    }
+
+    .lastchanged {
+        margin: 2px 20px;
+    }
+
+    .knowmore {
+        width: 99%;
+    }
+
+    .knowmore h2 {
+        margin: 10px 20px;
+        font-weight: 500;
+        text-align: center;
+        font-size: 25px;
+    }
+}
+
+@media (min-width:300px) and (max-width:450px) {
+    .profile {
+        margin: 0px 5px;
+    }
+
+    .personalinfo {
+        height: 460px;
+    }
+
+    #heading {
+        margin: 15px 5px;
+        text-align: center;
+        width: 170px;
+        font-weight: 400;
+        font-size: 25px;
+    }
+
+    .infosection {
+        flex-wrap: wrap;
+    }
+
+    .basic {
+        border: 2px solid lightgray;
+        margin: 10px 5px;
+        margin-top: 10px;
+        /* height: 35vh; */
+        height: 170px;
+        width: 99%;
+        border-radius: 10px;
+    }
+
+    .basic h2 {
+        margin: 20px 10px;
+        font-weight: 500;
+        font-size: 15px;
+    }
+
+    .namerow {
+        display: flex;
+        gap: 5px;
+        margin: 5px 5px;
+        border-bottom: 1px solid lightgrey;
+    }
+
+    .name {
+        margin: 5px 5px;
+        width: 50px;
+        font-size: 13px;
+    }
+
+    .username {
+        margin: 5px 5px;
+        font-size: 11px;
+    }
+
+    .bdayrow {
+        display: flex;
+        gap: 5px;
+        margin: 10px 5px;
+        border-bottom: 1px solid lightgrey;
+    }
+
+    .bday {
+        margin: 5px 5px;
+        width: 50px;
+        font-size: 13px;
+    }
+
+    .date {
+        margin: 5px 5px;
+        font-size: 11px;
+    }
+
+    .genrow {
+        display: flex;
+        gap: 5px;
+        margin: 10px 5px;
+        border-bottom: 1px solid lightgrey;
+    }
+
+    .gen {
+        margin: 5px 5px;
+        width: 50px;
+        font-size: 13px;
+    }
+
+    .gender {
+        margin: 5px 5px;
+        font-size: 11px;
+    }
+
+    .contact {
+        border: 2px solid lightgray;
+        margin: 10px 5px;
+        margin-top: 10px;
+        /* height: 35vh; */
+        height: 170px;
+        width: 99%;
+        border-radius: 10px;
+    }
+
+    .contact h2 {
+        margin: 20px 10px;
+        font-weight: 500;
+        font-size: 15px;
+    }
+
+    .emailrow {
+        display: flex;
+        gap: 5px;
+        margin: 5px 5px;
+        border-bottom: 1px solid lightgrey;
+    }
+
+    .email {
+        margin: 5px 5px;
+        width: 50px;
+        font-size: 13px;
+    }
+
+    .emailid {
+        margin: 5px 5px;
+        font-size: 11px;
+    }
+
+    .phonerow {
+        display: flex;
+        gap: 5px;
+        margin: 15px 5px;
+        border-bottom: 1px solid lightgrey;
+    }
+
+    .tel {
+        margin: 5px 5px;
+        width: 50px;
+        font-size: 13px;
+    }
+
+    .telno {
+        margin: 5px 5px;
+        font-size: 11px;
+    }
+
+    .section {
+        flex-wrap: wrap;
+    }
+
+    .password {
+        width: 99%;
+        padding: 0px 5px;
+        margin: 5px 5px;
+        height: 140px;
+    }
+
+    .password h2 {
+        margin: 10px 10px;
+        font-weight: 500;
+        font-size: 17px;
+    }
+
+    .sugg {
+        font-size: 12px;
+    }
+
+    .forbtn {
+        gap: 135px;
+    }
+
+    .lastchanged {
+        margin: 0px 20px;
+        font-size: 15px;
+    }
+
+    .knowmore {
+        width: 99%;
+        height: 140px;
+    }
+
+    .knowmore h2 {
+        margin: 10px 20px;
+        font-weight: 500;
+        text-align: center;
+        font-size: 17px;
+    }
+
+    .clickbtn {
+        margin: 30px 0px;
+    }
+
+    .btn {
+        font-size: 20px;
+        border-radius: 20px;
+        padding: 5px 20px;
+    }
+
+    .logoutsectionout {
+        margin: 10px 20px;
+        top: 70px;
+    }
+
+    .logoutsection {
+        margin: 20px 20px;
+        gap: 10px;
+        width: 120px;
+        padding: 10px 10px;
+    }
+
+    .logoutimg img {
+        height: 29px;
+        width: 22px;
+    }
+
+    .logout {
+        font-size: 20px;
+    }
+
+    .propic {
+        height: 190px;
+        width: 190px;
+        top: 70px;
+    }
+
+    .info {
+        top: 70px;
+    }
+
+    .info h1 {
+        font-size: 30px;
+    }
+}
+
+@media (min-width:300px) and (max-width:890px) {
+    .home-parent {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .logo-black-final-5-icon {
+        position: relative;
+        top: 5px;
+        width: 400px;
+        height: 90px;
+    }
+
+    .useraccess {
+        width: 95%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .profile {
+        top: 17vh;
+        height: 83vh;
+    }
+}
+
+@media (min-width:625px) and (max-width:890px) and (min-height:650px) and (max-height:700px) {
+    .profile {
+        top: 28vh;
+        height: 72vh;
+    }
+}
+
+@media (min-width:625px) and (max-width:980px) and (min-height:700px) and (max-height:750px) {
+    .profile {
+        top: 26vh;
+        height: 74vh;
+    }
+}
+
+@media (min-width:625px) and (max-width:980px) and (min-height:750px) and (max-height:800px) {
+    .profile {
+        top: 24vh;
+        height: 76vh;
+    }
+}
+
+@media (min-width:625px) and (max-width:980px) and (min-height:800px) and (max-height:880px) {
+    .profile {
+        top: 23vh;
+        height: 87vh;
+    }
+}
+
+@media (min-width:625px) and (max-width:980px) and (min-height:880px) and (max-height:935px) {
+    .profile {
+        top: 20vh;
+        height: 80vh;
+    }
+}
+
+@media (min-width:625px) and (max-width:980px) and (min-height:935px) and (max-height:1000px) {
+    .profile {
+        top: 19vh;
+        height: 81vh;
+    }
+}
+
+@media (min-width:625px) and (max-width:980px) and (min-height:1000px) and (max-height:1175px) {
+    .profile {
+        top: 19vh;
+        height: 81vh;
+    }
+}
+
+@media (min-width:980px) and (min-height:340px) and (max-height:380px){
+    .profile {
+        top: 28vh; 
+        height: 72vh;
+    }
+}
+
+@media (min-width:980px) and (min-height:380px) and (max-height:420px){
+    .profile {
+        top: 25vh; 
+        height: 75vh;
+    }
+}
+
+@media (min-width:980px) and (min-height:420px) and (max-height:480px){
+    .profile {
+        top: 23vh; 
+        height: 77vh;
+    }
+}
+
+@media (min-width:980px) and (min-height:480px) and (max-height:640px){
+    .profile {
+        top: 26vh; 
+        height: 80vh;
+    }
+}
+
+@media only screen and (max-height:650px) {
+     .profile{
+        top:25vh;
+        height: 75vh;
+     }    
+}
+@media  only screen and (max-width:600px){
+    .logo img{
+        width: 393px;
+    }
+    .useraccess{
+        width: 93% !important;
+    }
+}
+@media  only screen and (max-width:480px){
+    .logo img{
+        width: 354px;
+        height: 70px;
+    }
+    .useraccess{
+        width: 93% !important;
+    }
+    .home{
+        font-size: 20px;
+    }
+}
+@media  only screen and (max-width:400px){
+    .logo img{
+        width: 305px;
+        height: 70px;
+    }
+    .useraccess{
+        width: 93% !important;
+    }
+    .home{
+        font-size: 19px;
+    }
+}
+@media  only screen and (max-width:385px){
+    .logo img{
+        left: 33px;
+    }
+    .useraccess{
+        width: 105% !important;
+    }
+    .home{
+        font-size: 19px;
+    }
+}
+@media  only screen and (max-width:350px){
+    .logo img{
+        left: 43px;
+    }
+    .useraccess{
+        width: 105% !important;
+    }
+    .home{
+        font-size: 17px;
+    }
+}
+.completeprofile{
+    position: absolute;
+    right: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    border: 3px solid #89288f;
+    padding: 10px 15px;
+    border-radius: 15px;
+    color: white;
+    background-color: #89288f;
+    cursor: pointer;
+}
+
+.completeprofile:hover{
+    border: 3px solid #89288f;
+    color: #89288f;
+    background-color: #8a288f24;
+}
+
+.completeprofile:active{
+    box-shadow: 0px 0px 7px 2px gray;
+}
+@media (min-width:580px) and (max-width:700px){
+    .completeprofile{
+        right: 15px;
+        font-size: 17px;
+        padding: 8px 10px;
+        border-radius: 15px;
+    }
+}
+
+
+@media (min-width:510px) and (max-width:580px){
+    .completeprofile{
+        right: 10px;
+        font-size: 15px;
+        padding: 5px 8px;
+        border-radius: 10px;
+    }
+}
+
+@media (min-width:450px) and (max-width:510px){
+    .completeprofile{
+        right: 10px;
+        font-size: 12px;
+        padding: 5px 8px;
+        border-radius: 10px;
+    }
+}
+
+@media (min-width:350px) and (max-width:450px){
+    .completeprofile{
+        top: 230px;
+        right: 10px;
+        font-size: 10px;
+        padding: 5px 5px;
+        border-radius: 10px;
+    }
+}
+
+@media only screen and (max-width:350px) {
+    .completeprofile{
+      top: 325px;
+      right: 10px;
+      font-size: 10px;
+      padding: 5px 5px;
+      border-radius: 10px;
+    }    
+}
+
+@media only screen and (max-height:1400px) {
+     .profile{
+        top: 8vh;
+        height: 79vh;
+     }
+     .logoutsectionout{
+        margin-bottom: 48vh;
+     }
+         
+}
+@media only screen and (max-height:1300px) {
+     .profile{
+        top: 14vh;
+        height: 79vh;
+     }
+     .logoutsectionout{
+        margin-bottom: 47vh;
+     }
+         
+}
+@media only screen and (max-height:1200px) {
+     .profile{
+        top: 15vh;
+        height: 79vh;
+     }
+     .logoutsectionout{
+        margin-bottom: 47vh;
+     }
+         
+}
+@media only screen and (max-height:1090px) {
+     .profile{
+        top: 18vh;
+        height: 79vh;
+     }
+     .logoutsectionout{
+        margin-bottom: 42vh;
+     }
+         
+}
+@media only screen and (max-height:980px) {
+     .profile{
+        top: 16vh;
+        height: 79vh;
+     }
+     .logoutsectionout{
+        margin-bottom: 32vh;
+     }
+         
+}
+@media only screen and (max-height:900px) {
+     .profile{
+        top: 17vh;
+        height: 79vh;
+     }
+     .logoutsectionout{
+        margin-bottom: 30vh;
+     }
+         
+}
+@media only screen and (max-height:750px) {
+     .profile{
+        top: 21vh;
+        height: 79vh;
+     }
+     .logoutsectionout{
+        margin-bottom: 20vh;
+     }
+         
+}
+@media only screen and (max-height:725px) {
+     .profile{
+        top: 23vh;
+        height: 79vh;
+     }
+         
+}
+/* @media (max-width:900px) and (max-height:1300px) {
+       .profile{
+        top: 14vh;
+       }    
+} */

@@ -1,0 +1,381 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    position: relative;
+    overflow-y: auto;
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.mainbox {
+    background-image: url("images/bglib.png");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+.logo img {
+    width: 78px;
+    height: 89px;
+    /* transition: all 0.5s; */
+}
+
+.home img {
+    /* filter: invert(); */
+    /* width: 58px;
+    height: 80px;
+    margin-right: 15px;
+    margin-right: 20px;
+    cursor: pointer; */
+    cursor: pointer;
+    /* filter: invert(1); */
+}
+
+.search {
+    width: max(55vw, 200px);
+    height: 33px;
+    border-radius: 36px;
+    background-color: rgba(192, 199, 199, 0.447);
+    padding: 10px 40px;
+    font-size: larger;
+    border: none;
+    padding-left: 63px;
+    margin: 0px 5px;
+}
+
+.search input {
+    color: white;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100vw;
+    height: 113px;
+    padding: 0px 10px;
+    top: 0px;
+    position: fixed;
+    z-index: 1;
+    transition: all 0.5s;
+    /* background-color: rgba(1, 20, 20, 0.989); */
+}
+
+.img img {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 12px;
+    left: 17px;
+    width: 30px;
+    height: 29px;
+}
+
+form {
+    position: relative;
+}
+
+::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+.filter {
+    position: absolute;
+    top: 5px;
+    right: 12px;
+    border-radius: 72px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 23px;
+    color: #f8f1f1;
+    width: 114px;
+    height: 43px;
+    background-color: #ffae4ae8;
+    cursor: pointer;
+}
+
+.card {
+    width: 29vw;
+    height: 240px;
+    background-color: #d9d9d9b7;
+    margin: 20px auto;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.card:hover {
+    padding: 1px;
+    background-color: #a8a7a7d8;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 115px !important;
+    margin: 10px;
+}
+
+.black {
+    background-color: #89288f !important;
+}
+
+.dropbox {
+    border-radius: 27px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: -webkit-fill-available;
+    z-index: -1;
+    height: 364px;
+    background-color: #ffffffd6;
+    visibility: hidden;
+    transition: all 0.1s;
+}
+
+.branch {
+    position: absolute;
+    left: 0px;
+    top: 70px;
+    font-size: 29px;
+    /* border: 2px solid white; */
+    width: -webkit-fill-available;
+    padding: 0px 22px;
+    cursor: pointer;
+}
+
+.close img {
+    /* filter: invert(1); */
+    position: absolute;
+    right: 128px;
+    top: 3px;
+    width: 50px;
+}
+
+.close {
+    visibility: hidden;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.branch:hover {
+    background-color: rgba(182, 184, 184, 0.427);
+}
+
+.computer {
+    top: 70px;
+}
+
+.electrical {
+    top: 109px
+}
+
+.mechanical {
+    top: 149px;
+}
+
+.civil {
+    top: 189px;
+}
+
+.ep {
+    top: 229px;
+}
+
+.chemical {
+    top: 269px;
+}
+
+.bsms {
+    top: 309px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: -webkit-fill-available;
+    /* justify-content: center; */
+    margin-top: 35px !important;
+    font-size: 23px;
+    gap: 6px;
+    margin: 20px 10px;
+    text-align: center;
+    color: black;
+    width: -webkit-fill-available;
+}
+
+.ellipse {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: calc(1.5em * 1);
+    line-height: 1.6em;
+    text-align: center;
+}
+
+.three-lines {
+    white-space: normal;
+}
+
+.width {
+    width: 100%;
+}
+
+.ellipse-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: calc(1.6em * 2);
+    line-height: 1.4em;
+    text-align: center;
+}
+
+@media only screen and (max-width:1075px) {
+    .card {
+        width: 30vw;
+    }
+}
+
+@media only screen and (max-width:930px) {
+    .card {
+        width: 42vw;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .search {
+        width: 43vw;
+    }
+
+    .filter {
+        width: 87px;
+    }
+
+    .branch {
+        font-size: 22px;
+    }
+
+    .close img {
+        right: 96px;
+        width: 39px;
+        top: 8px;
+    }
+}
+
+@media only screen and (max-width:475px) {
+    .logo img {
+        width: 54px;
+        height: 69px !important;
+    }
+
+    .account img {
+        width: 41px;
+    }
+
+    .filter {
+        width: 53px;
+        font-size: 17px;
+    }
+
+    .img img {
+        top: 15px;
+        left: 15px;
+        width: 24px;
+        height: 23px;
+    }
+
+    .search {
+        padding-left: 47px;
+    }
+
+    .close img {
+        right: 60px;
+    }
+
+    .branch {
+        font-size: 19px;
+    }
+
+    .content {
+        font-size: 15px;
+    }
+
+    nav {
+        padding: 0px;
+    }
+}
+
+@media only screen and (max-width:390px) {
+    .search {
+        width: 37vw;
+        margin-right: 5px;
+    }
+
+    nav {
+        padding: 0px 5px;
+    }
+
+    .filter {
+        width: 51px;
+        font-size: 16px;
+    }
+
+    .branch {
+        font-size: 18px;
+    }
+
+    .content {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width:350px) {
+    nav {
+        padding: 0px 0px;
+    }
+}
+
+@media only screen and (max-height:1300px) {
+    .cards {
+        margin-bottom: 48vh;
+    }
+}
+
+@media only screen and (max-height:1200px) {
+    .cards {
+        margin-bottom: 46vh;
+    }
+}
+
+@media only screen and (max-height:920px) {
+    .cards {
+        margin-bottom: 30vh;
+    }
+}
+
+@media only screen and (max-height:820px) {
+    .cards {
+        margin-bottom: 17vh;
+    }
+}
