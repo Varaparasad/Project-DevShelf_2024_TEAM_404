@@ -5,104 +5,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <style>
-        h1 {
-            text-align: center;
-        }
-
-        tbody tr {
-            cursor: pointer;
-        }
-
-        tr:hover {
-            background-color: rgb(108, 108, 106);
-        }
-
-        nav form {
-            display: flex;
-            gap: 10px;
-            margin: 0px 40px;
-        }
-
-    </style>
+    <link rel="icon" type="x-icon" href="https://scif.iitdh.ac.in/wp-content/uploads/2021/02/LOGO.png">
+    <link rel="stylesheet" href="search_style.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-light bg-light justify-content-between">
-        <a class="navbar-brand">Navbar</a>
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search"  name="search">
-            <input type="submit" value="search">
-            <!-- <button type="button" class="bbb btn btn-secondary" value="search">Secondary</button> -->
-        </form>
-    </nav>
-    <!-- <h1><b>click here for next page</b></h1>
-    <div class="d-grid">
-        <button class="btn btn-primary" type="button">button</button>
-    </div> -->
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">Sno.</th>
-                <th scope="col">title</th>
-                <th scope="col">description</th>
-                <th scope="col">author</th>
-                <th scope="col">genre</th>
-                <th scope="col">department</th>
-                <th scope="col">count</th>
-                <!-- <th scope="col">Number</th>
-                <th scope="col">Number</th>
-                <th scope="col">Number</th>
-                <th scope="col">Number</th> -->
-            </tr>
-        </thead>
-        <tbody>
+    <div class="mainbox">
+        <nav>
+            <div class="logo">
+                <img src="images/logo-black-final-5@2x.png" alt="">
+            </div>
+
+            <form>
+                <div class="img">
+                    <img src="images/vector@2x.png" alt="">
+                </div>
+                <input class="search" type="text" placeholder="Search" name="search" >
+                <div class="dropbox">
+                    <div class="branch computer">Computer Science</div>
+                    <div class="branch electrical">Electrical Engineering</div>
+                    <div class="branch mechanical">Mechanical Engineering</div>
+                    <div class="branch civil">Civil Engineering</div>
+                    <div class="branch ep">Engineering Physics</div>
+                    <div class="branch chemical">Chemical Engineering</div>
+                </div>
+                <div class="filter">
+                    filters
+                </div>
+                <div class="close">
+                    <img src="images/close.svg" alt="">
+                </div>
+            </form>
+
+            <div class="home">
+                <img src="images/home.png" alt="">
+            </div>
+        </nav>
+        <div class="cards">
             <% for(let index=1;index<=b.length ;index++) { %>
-
-                <tr class="r">
-                    <th scope="row">
-                        <%= index %>
-                    </th>
-                    <td>
-                        <%= b[index-1].title %>
-                    </td>
-                    <td>
-                        <%= b[index-1].description %>
-                    </td>
-                    <td>
-                        <%= b[index-1].author %>
-                    </td>
-                    <td>
-                        <%= b[index-1].genre %>
-                    </td>
-                    <td>
-                        <%= b[index-1].department %>
-                    </td>
-                    <td>
-                        <%= b[index-1].count %>
-                    </td>
-                </tr>
-
+                <div class="card">
+                    <div class="content">
+                    <div class="title width ellipse-2 three-lines"> <b><%= b[index-1].title %> </b></div>
+                    <div class="author width ellipse three-lines"><%= b[index-1].author %></div>
+                    <div class="deparment author width ellipse three-lines"><%= b[index-1].department %></div>
+                    <div class="genre author width ellipse three-lines"><%= b[index-1].genre %></div>
+                    </div>
+                </div>
                 <% } %>
-        </tbody>
-
-    </table>
-
-    <!-- <script>
-            document.querySelector("button").addEventListener("click", async () => {
-                // console.log("Yes")
-                let a = await fetch("/next")
-                let b = await a.text()
-                // console.log(b)
-            })
-        </script> -->
+        </div>
+    </div>
     <script>
-        let a = document.querySelectorAll(".r")
+        const nav1 = document.querySelector("nav");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY >= 40) {
+                // console.log("yes")
+                nav1.classList.add('black')
+                document.querySelector(".logo").querySelector("img").src = "https://scif.iitdh.ac.in/wp-content/uploads/2021/02/LOGO.png"
+                document.querySelector(".logo").querySelector("img").style.filter = "invert(1)"
+                document.querySelector(".logo").querySelector("img").style.width = 75 + "px"
+                document.querySelector(".logo").querySelector("img").style.height = 76 + "px"
+
+            }
+            else if (window.scrollY < 20) {
+                nav1.classList.remove('black')
+                document.querySelector(".logo").querySelector("img").src = "images/logo-black-final-5@2x.png"
+                document.querySelector(".logo").querySelector("img").style.filter = "invert(0)"
+                document.querySelector(".logo").querySelector("img").style.width=55+"px"
+                document.querySelector(".logo").querySelector("img").style.height = 90 + "px"
+            }
+        })
+        document.querySelector(".computer").addEventListener("click", () => {
+            // console.log("yes")
+            // window.location="/hi"
+        })
+        document.querySelector(".filter").addEventListener("click", () => {
+            document.querySelector(".dropbox").style.visibility = "visible"
+            document.querySelector(".close").style.visibility = "visible"
+            document.querySelector(".img").querySelector("img").style.filter = "invert(1)"
+        })
+        document.querySelector(".close").addEventListener("click", () => {
+            document.querySelector(".dropbox").style.visibility = "hidden"
+            document.querySelector(".close").style.visibility = "hidden"
+            document.querySelector(".img").querySelector("img").style.filter = "invert(0)"
+        })
+          
+        Array.from(document.querySelectorAll(".branch")).forEach(element => {
+            
+            element.addEventListener("click",()=>{
+                window.location=`${window.location.href.split("?")[0]}?search=${element.innerHTML}`
+            })
+        });
+        
+
+        let a = document.querySelectorAll(".card")
         Array.from(a).forEach(element => {
             element.addEventListener("click", () => {
-                let newloc = element.querySelector("td").innerHTML.trim()
+                let newloc = element.querySelector(".title").querySelector("b").innerHTML.trim()
                 console.log(newloc)
                 window.location = `/${newloc}`
             })
@@ -110,6 +108,9 @@
         setTimeout(() => {
             document.location.reload()
         }, 30000);
+        document.querySelector(".home").addEventListener("click",()=>{
+            window.location="/landingpage"
+        })
     </script>
 </body>
 
