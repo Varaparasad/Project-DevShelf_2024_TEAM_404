@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-     <link rel="stylesheet" href="loginpage_style.css">
+    <link rel="stylesheet" href="loginpage_style.css">
+    <link rel="icon" type="x-icon" href="https://scif.iitdh.ac.in/wp-content/uploads/2021/02/LOGO.png">
 </head>
 
 <body>
@@ -14,24 +15,21 @@
         <div class="com"><img src="images/two.png" alt=""></div>
         <div class="loginbox">
             <div class="flex">
-            <div class="l1">Welcome Back</div>
-            
-            <div class="inputs">
+                <div class="l1">Welcome Back</div>
 
-                <form action="/loginpage" method="post">
-                    <input type="text" name="name" placeholder="Username/Roll no." id="name">
-                    <input type="text" name="password" placeholder="Password" id="password">
-                    <button type="submit" name="submit" class="submit">Log in</button>
-                    <p>Don't have account?<a href="/signup">Sign up</a></p>
-                  </form>
+                <div class="inputs">
+
+                    <form action="/loginpage" method="post">
+                        <!-- <input type="text" name="password" placeholder="Password" id="password"> -->
+                        <input type="text" name="name" placeholder="Username/Roll no." id="name">
+                        <input type="password" name="password" placeholder="Password" id="password">
+                        <button type="submit" name="submit" class="submit">Log in</button>
+                        <p>Don't have account?<a href="/signup">Sign up</a></p>
+                    </form>
+                </div>
+                <div class="continue">
+                </div>
             </div>
-            <div class="continue">
-        
-            <!-- <div class="img">
-                <img src="https://th.bing.com/th/id/OIP.L7DQs2i9bNGWk9vrRKuseQHaE8?rs=1&pid=ImgDetMain" alt="">
-            </div> -->
-        </div>
-        </div>
         </div>
     </div>
 </body>
