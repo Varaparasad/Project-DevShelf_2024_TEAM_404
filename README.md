@@ -13,7 +13,8 @@ Project based on Library-Management-System
 ```
 ## Save the files in the same manner as saved in this repository.
 ## The plan of the project
-Screenshot 2024-07-17 185034.png
+
+## ![image](./public/images/Screenshot%202024-07-17%20185034.png)
 
 
 
