@@ -8,8 +8,8 @@ const details = require('./models/schema.js')
 // const mybooks = require('./models/schema2.js')
 const bodyparser = require('body-parser')
 const notifier = require('node-notifier');
-// const accountSid = 'ACc5111c9af49fa8aa356c34a15b81ec4e';
-// const authToken = '620c95240c450f4e164737f23dc547d8';
+const accountSid = 'ACc5111c9af49fa8aa356c34a15b81ec4e';
+const authToken = '620c95240c450f4e164737f23dc547d8';
 const client = require('twilio')(accountSid, authToken);
 app.set('view engine', 'ejs')
 app.use(express.static(__dirname + '/public'));
@@ -251,7 +251,12 @@ app.get('/search', async (req, res) => {
             { author: { $regex: '.*' + search + '.*', $options: 'i' } }
         ]
     })
-    res.render('search', { b });
+    if(b.length==0){
+        res.render('search', { b ,nobooks:"No books found"});
+    }
+    else{
+        res.render('search', { b,nobooks:"-" });
+    }
 
 })
 
@@ -341,6 +346,11 @@ app.get('/landingpage', async (req, res) => {
             f = await details.find({ title: element })
             let ff = await details.find({ department: f[0].department })
             res.render('buynow', { bookdetails: f[0], b1: ff })
+        })
+        app.get(`/${element.replaceAll(" ", "%20")}w`, async (req, res) => {
+            f = await details.find({ title: element })
+            let ff = await details.find({ department: f[0].department })
+            res.render('buynoww', { bookdetails: f[0], b1: ff })
         })
 
 
@@ -467,6 +477,16 @@ app.post('/mybooks', async (req, res) => {
 
 
         await details.updateOne({ title: fobj.title }, { $set: { count: f[0].count } })
+        let wishlistbooks=await userdetails.find({name:uname})
+        let len=wishlistbooks[0].mywishlist.length
+        for(let i=0;i<len;i++){
+            if(wishlistbooks[0].mywishlist[i].title==fobj.title){
+                await userdetails.updateOne(
+                    { name:uname },
+                    { $pull: { mywishlist: { title:fobj.title } } }
+                );
+            }
+        }
         res.redirect("/orders")
     }
 })
@@ -498,13 +518,16 @@ app.get('/orders', async (req, res) => {
 
         let mybooksdata = await userdetails.find({ name: uname })
         if (mybooksdata[0].mybooks.length == 0) {
-            res.render('orders', { b: mybooksdata[0].mybooks, noof: "You havent ordered any books yet Try ordering from wishlist" })
+            res.render('orders', { b: mybooksdata[0].mybooks, noof: "You havent ordered any books yet",try1:"Try ordering from wishlist" })
         }
         // console.log(mybooksdataa[0].mybooks)
         else {
-            res.render('orders', { b: mybooksdata[0].mybooks, noof: " " })
+            res.render('orders', { b: mybooksdata[0].mybooks, noof: " ",try1:" "})
         }
+        
+        
     }
+
 })
 
 app.get('/wishlist', async (req, res) => {
@@ -553,7 +576,7 @@ app.post('/edit', async (req, res) => {
         if (cou == 1) {
             notifier.notify({
                 title: 'Username already exists',
-                message: 'Try using another usernamee'
+                message: 'Try using another username'
             });
             res.redirect("/editprofile")
         }
