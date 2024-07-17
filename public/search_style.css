@@ -251,6 +251,14 @@ form {
     text-align: center;
 }
 
+p b{
+    position: absolute;
+    top: 30%;
+    left: 44%;
+    font-size: 35px;
+    color: white;
+}
+
 @media only screen and (max-width:1075px) {
     .card {
         width: 30vw;
