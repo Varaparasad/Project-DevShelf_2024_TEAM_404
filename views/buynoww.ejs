@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" type="x-icon" href="https://scif.iitdh.ac.in/wp-content/uploads/2021/02/LOGO.png">
+    <link rel="stylesheet" href="buynow_style.css">
+</head>
+
+<body>
+    <div class="mainbox">
+        <nav>
+            <div class="logo">
+                <img src="images/logo-black-final-5@2x.png" alt="">
+            </div>
+            <div class="nav2">
+                <div class="links">
+                    <div class="home">Home</div>
+                    <div class="orders">Orders</div>
+                    <div class="wishlist">Wishlist</div>
+                </div>
+                <div class="buttons">
+                    <div class="search"> <img src="images/vector@2x.png" alt=""></div>
+                    <div class="account"> <img src="images/group-10@2x.png" alt=""></div>
+                </div>
+                <div class="hambuger">
+                    <img src="images/hambuger.svg" alt="">
+                </div>
+                <div class="close">
+                    <img src="images/close.svg" alt="">
+                </div>
+            </div>
+        </nav>
+        <div class="flex">
+            <p class="title">
+                <b><%= bookdetails.title %></b>
+            </p>
+            <p class="desc">
+                <%= bookdetails.description %>
+            </p>
+            <p class="author">
+                <%= bookdetails.author %>
+            </p>
+            <p class="genre">
+                <%= bookdetails.genre %>
+            </p>
+            <p class="count" style="visibility: hidden;">
+                <%= bookdetails.count %>
+            </p>
+            <p class="count" style="visibility: hidden;"> bookdetails.count</p>
+            <div class="flex2">
+                <form id="form1" action="/mybooks" method="post">
+                    <button id="submit1" class="order"><span class="default">Order
+                </form>
+
+                <form id="form2" action="/mywishlists" method="post">
+                    <button id="submit2" class="b2"> <img src="images/plus.svg" alt="">Add to wishlist</button>
+                </form>
+            </div>
+        </div>
+        <p class="more">You may be interested</p>
+        <div class="cards">
+            <% for(let index=1;index<=b1.length ;index++) { %>
+                <div class="card">
+                    <div class="content">
+                        <div class="titlec width ellipse-2 three-lines">
+                           <b><%= b1[index-1].title %></b>
+                        </div>
+                        <div class="authorc width ellipse three-lines">
+                            <%= b1[index-1].author %>
+                        </div>
+                        <div class="genrec width ellipse three-lines">
+                            <%= b1[index-1].genre %>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+        </div>
+    </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+    <script>
+
+        let objcount = document.querySelector(".count").innerHTML
+        document.querySelector("#submit1").addEventListener("click", () => {
+            if (objcount == 0) {
+                console.log(objcount)
+                alert("Curently unavailable added to wishlist")
+            }
+            else {
+                alert("Booked sucessfully")
+            }
+        })
+        document.querySelector(".b2").style.visibility="hidden"
+
+        document.querySelector("#submit2").addEventListener("click", () => {
+            alert("Added to wishlist")
+        })
+
+        document.querySelector(".home").addEventListener("click", () => {
+            window.location = `${window.location.origin}/landingpage`
+
+        })
+        document.querySelector(".orders").addEventListener("click", () => {
+            window.location = `${window.location.origin}/orders`
+
+        })
+        document.querySelector(".search").addEventListener("click", () => {
+            window.location = `${window.location.origin}/search`
+
+        })
+        document.querySelector(".wishlist").addEventListener("click", () => {
+            window.location = `${window.location.origin}/wishlist`
+        })
+        document.querySelector(".account").addEventListener("click", () => {
+            window.location = `${window.location.origin}/profile`
+        })
+        const nav1 = document.querySelector("nav")
+        const img = document.querySelector(".logo").querySelector("img")
+        window.addEventListener("scroll", () => {
+            if (window.scrollY >= 35) {
+                nav1.classList.add('purple')
+                img.src = "https://scif.iitdh.ac.in/wp-content/uploads/2021/02/LOGO.png"
+                img.style.filter = "invert(1)"
+                document.querySelector(".b2").style.visibility="hidden"
+
+            }
+            else if (window.scrollY < 35) {
+                nav1.classList.remove('purple')
+                img.src = "images/logo-black-final-5@2x.png"
+                img.style.filter = "invert(0)"
+                document.querySelector(".b2").style.visibility="hidden"
+
+            }
+            if (window.scrollY >= 260) {
+                document.querySelector(".flex2").querySelector(".order").style.visibility = "hidden"
+                document.querySelector(".flex2").querySelector(".b2").style.visibility = "hidden"
+                document.querySelector(".b2").style.visibility="hidden"
+
+            }
+            else if (window.screenY < 260) {
+                document.querySelector(".flex2").querySelector(".order").style.visibility = "visible"
+                document.querySelector(".flex2").querySelector(".b2").style.visibility = "visible"
+                document.querySelector(".b2").style.visibility="hidden"
+
+
+            }
+        })
+
+        document.querySelector(".hambuger").querySelector("img").addEventListener("click", () => {
+            document.querySelector(".links").style.visibility = "visible"
+            document.querySelector(".close").querySelector("img").style.visibility = "visible"
+            document.querySelector(".buttons").style.visibility = "hidden"
+            document.querySelector(".links").style.backgroundColor = "#89288f"
+            document.querySelector(".links").style.right = 0 + "px"
+            document.querySelector(".hambuger").querySelector("img").style.visibility = "hidden"
+            document.querySelector(".b2").style.visibility="hidden"
+
+        })
+
+        document.querySelector(".close").querySelector("img").addEventListener("click", () => {
+            document.querySelector(".links").style.right = -100 + "%"
+            document.querySelector(".close").querySelector("img").style.visibility = "hidden"
+            document.querySelector(".buttons").style.visibility = "visible"
+            document.querySelector(".hambuger").querySelector("img").style.visibility = "visible"
+            document.querySelector(".b2").style.visibility="hidden"
+
+        })
+
+        
+        let a = document.querySelectorAll(".card")
+        Array.from(a).forEach(element => {
+            element.addEventListener("click", () => {
+                let newloc = element.querySelector(".titlec").querySelector("b").innerHTML.trim()
+                console.log(newloc)
+                window.location = `/${newloc}`
+            })
+        });
+    </script>
+</body>
+
+</html>
