@@ -16,5 +16,9 @@ Project based on Library-Management-System
 
 ## ![image](./public/images/Screenshot%202024-07-17%20185846.png)
 
+## ![image](./public/images/Screenshot%202024-07-17%20190025.png)
+
+## ![image](./public/images/Screenshot%202024-07-17%20190111.png)
+
 
 
