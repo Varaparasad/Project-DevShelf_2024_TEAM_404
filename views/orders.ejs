@@ -35,7 +35,8 @@
         </nav>
         <h1><b>My Orders</b></h1>
         <div class="cards">
-            <p><%= noof %> </p>
+            <p><%= noof %></p>
+            <p class="p1"><%= try1 %></p>
             <% for(let index=1;index<=b.length ;index++) { %>
                 <div class="card">
                     <div class="content">
@@ -143,6 +144,10 @@
                     element.style.backgroundColor = "rgb(138 23 23)"
                 }
             });
+            document.querySelector(".p1").addEventListener("click",()=>{
+                window.location="/wishlist"
+            })
+            
 
         </script>
 </body>
