@@ -12,5 +12,8 @@ Project based on Library-Management-System
   npm i --global nodemon
 ```
 ## Save the files in the same manner as saved in this repository.
+## The plan of the project
+Screenshot 2024-07-17 185034.png
+
 
 
