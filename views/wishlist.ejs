@@ -33,33 +33,41 @@
                 </div>
             </div>
         </nav>
-        <h1><b>Mywish List </b></h1>
+        <h1><b>My wishList </b></h1>
         <div class="cards">
-            <p><%= noof %></p>
+            <p>
+                <%= noof %>
+            </p>
             <% for(let index=1;index<=b.length ;index++) { %>
                 <div class="card">
                     <div class="content">
-                    <div class="title width ellipse-2 three-lines"> <b><%= b[index-1].title %> </b></div>
-                    <div class="author width ellipse three-lines"><%= b[index-1].author %></div>
-                    <div class="genre width ellipse three-lines"><%= b[index-1].genre %></div>
-                    <div class="remove">Remove from wishlist</div>
+                        <div class="title width ellipse-2 three-lines"> <b>
+                                <%= b[index-1].title %>
+                            </b></div>
+                        <div class="author width ellipse three-lines">
+                            <%= b[index-1].author %>
+                        </div>
+                        <div class="genre width ellipse three-lines">
+                            <%= b[index-1].genre %>
+                        </div>
+                        <button class="remove">Remove from wishlist</button>
                     </div>
                 </div>
                 <% } %>
         </div>
         <script>
-        document.querySelector(".home").addEventListener("click", () => {
-            window.location = `${window.location.origin}/landingpage`
-        })
-        document.querySelector(".search").addEventListener("click", () => {
-            window.location = `${window.location.origin}/search`
-        })
-        document.querySelector(".orders").addEventListener("click", () => {
-            window.location = `${window.location.origin}/orders`
-        })
-        document.querySelector(".account").addEventListener("click", () => {
-            window.location = `${window.location.origin}/profile`
-        })
+            document.querySelector(".home").addEventListener("click", () => {
+                window.location = `${window.location.origin}/landingpage`
+            })
+            document.querySelector(".search").addEventListener("click", () => {
+                window.location = `${window.location.origin}/search`
+            })
+            document.querySelector(".orders").addEventListener("click", () => {
+                window.location = `${window.location.origin}/orders`
+            })
+            document.querySelector(".account").addEventListener("click", () => {
+                window.location = `${window.location.origin}/profile`
+            })
 
             const nav1 = document.querySelector("nav")
             const img = document.querySelector(".logo").querySelector("img")
@@ -96,16 +104,25 @@
                 document.querySelector(".buttons").style.visibility = "visible"
                 document.querySelector(".hambuger").querySelector("img").style.visibility = "visible"
                 document.querySelector("h1").querySelector("b").style.visibility = "visible"
-
             })
             Array.from(document.querySelectorAll(".card")).forEach(element => {
-                element.addEventListener("click",()=>{
-                    if(confirm(`Do you want to remove ${element.querySelector("b").innerHTML.trim()} from wishlsit`)){
-                        console.log("yes")
-                        window.location=`${window.location.origin}/wishlist/${element.querySelector("b").innerHTML.trim()}`
-                    }
+                let flag=0;
+                element.querySelector(".remove").addEventListener("click", ele => {
+                    ele.stopPropagation();
+                    console.log(element.querySelector("b").innerHTML.trim())
+                    window.location = `${window.location.origin}/wishlist/${element.querySelector("b").innerHTML.trim()}`
+                    flag=1
+                });
+
+                if(flag==0)
+                element.addEventListener("click", () => {
+                    window.location = `${window.location.origin}/${element.querySelector("b").innerHTML.trim()}w`
                 })
-            });
+            })
+
+
+
+
         </script>
 </body>
 
